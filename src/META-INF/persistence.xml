@@ -4,6 +4,7 @@
                 version="2.1">
     <persistence-unit name="jpa" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        
         <class>domain.address.entity.Address</class>
         <class>domain.customer.entity.Customer</class>
         <class>domain.common.entity.ChangeHistory</class>
@@ -23,12 +24,12 @@
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
             <property name="hibernate.hbm2ddl.auto" value="update" />
 
-            <!-- Configuring ehcache 
+            <!-- Configuring ehcache -->
             <property name="hibernate.cache.use_second_level_cache" value="true"/>
             <property name="hibernate.cache.use_query_cache" value="true"/>
             <property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory"/>
             <property name="hibernate.cache.provider_class" value="net.sf.ehcache.hibernate.EhCacheProvider"/>
--->
+
             <!-- Configuring Connection Pool -->
             <property name="hibernate.c3p0.min_size" value="1" />
             <property name="hibernate.c3p0.max_size" value="2" />
