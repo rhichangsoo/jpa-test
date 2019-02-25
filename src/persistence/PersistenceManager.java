@@ -8,7 +8,7 @@ public enum PersistenceManager {
     INSTANCE;
     private EntityManagerFactory emFactory;
     private PersistenceManager() {
-        emFactory = Persistence.createEntityManagerFactory("jpa-using-javase");
+        emFactory = Persistence.createEntityManagerFactory("jpa");
     }
     public EntityManager getEntityManager() {
         return emFactory.createEntityManager();
