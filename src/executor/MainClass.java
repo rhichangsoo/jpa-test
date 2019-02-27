@@ -1,13 +1,15 @@
 package executor;
 
-import javax.persistence.EntityManager;
+import java.util.List;
 
-import persistence.PersistenceManager;
+import domain.product.entity.Product;
+import domain.product.service.ProductService;
 
-public class MainClass {
+public class MainClass extends UpperExecutor {
 	public static void main(String[] args) {
-        EntityManager em = PersistenceManager.INSTANCE.getEntityManager();
-        em.close();
-        PersistenceManager.INSTANCE.close();		
+		ProductService productService = (ProductService)ctx.getBean("productService");
+		List<Product> products = productService.getProductByName("신짱");
+		products.forEach(System.out::println);
+		ctx.close();
 	}
 }
