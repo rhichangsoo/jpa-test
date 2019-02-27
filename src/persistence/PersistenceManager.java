@@ -6,14 +6,14 @@ import javax.persistence.Persistence;
 
 public enum PersistenceManager {
     INSTANCE;
-    private EntityManagerFactory emFactory;
+    private EntityManagerFactory entityManagerFactory;
     private PersistenceManager() {
-        emFactory = Persistence.createEntityManagerFactory("jpa");
+        entityManagerFactory = Persistence.createEntityManagerFactory("jpa");
     }
     public EntityManager getEntityManager() {
-        return emFactory.createEntityManager();
+        return entityManagerFactory.createEntityManager();
     }
     public void close() {
-        emFactory.close();
+        entityManagerFactory.close();
     }
 }
