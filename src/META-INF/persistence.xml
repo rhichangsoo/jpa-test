@@ -11,6 +11,7 @@
         <class>domain.order.item.entity.Item</class>
         <class>domain.order.entity.SaleOrder</class>
         <class>domain.product.entity.Product</class>
+        
         <properties>
             <!-- Configuring DB -->
             <property name="javax.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/jpa?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false" />
