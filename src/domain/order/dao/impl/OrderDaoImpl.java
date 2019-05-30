@@ -44,7 +44,27 @@ public class OrderDaoImpl implements OrderDao {
         
         criteriaQuery.select(salesOrderRoot);
         criteriaQuery.where(predicate);
-        
+        /*
+   select
+        salesorder1_.id as id1_1_,
+        salesorder1_1_.C_CUSTOMER_ID as C_CUSTOM6_1_,
+        salesorder1_1_.createDate as createDa2_1_,
+        salesorder1_1_.U_CUSTOMER_ID as U_CUSTOM7_1_,
+        salesorder1_1_.updateDate as updateDa3_1_,
+        salesorder1_1_.customer_id as customer8_1_,
+        salesorder1_1_.dateOfOrder as dateOfOr4_1_,
+        salesorder1_1_.totalAmount as totalAmo5_1_,
+        salesorder1_.shippinFee as shippinF1_6_ 
+    from
+        customer customer0_ cross 
+    join
+        sales_order salesorder1_ 
+    inner join
+        base_order salesorder1_1_ 
+            on salesorder1_.id=salesorder1_1_.id 
+    where
+        customer0_.id=salesorder1_1_.customer_id
+         */
 		return entityManager.createQuery(criteriaQuery).getResultList();
 	}
 
