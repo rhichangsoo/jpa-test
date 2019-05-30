@@ -1,19 +1,24 @@
 package domain.customer.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import domain.common.entity.ChangeHistory;
+import domain.order.entity.BaseOrder;
+import domain.order.salesorder.entity.SalesOrder;
 
 @Entity
 @Table(name = "customer")
 public class Customer {
-
     @Id
     @GeneratedValue
     private Integer id;
@@ -29,7 +34,10 @@ public class Customer {
     private int age;
     
     private String birthDay;
-
+    
+    @OneToMany(mappedBy = "customer", targetEntity = SalesOrder.class, cascade = {CascadeType.ALL})
+    private List<BaseOrder> salesOrders;
+    
     public Integer getId() {
         return id;
     }
@@ -65,6 +73,11 @@ public class Customer {
     }
     public void setBirthDay(String birthDay) {
         this.birthDay = birthDay;
-
     }
+	public List<BaseOrder> getSalesOrders() {
+		return salesOrders;
+	}
+	public void setSalesOrders(List<BaseOrder> salesOrders) {
+		this.salesOrders = salesOrders;
+	}
 }
