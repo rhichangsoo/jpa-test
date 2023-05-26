@@ -11,10 +11,17 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @ComponentScan(basePackages = {"domain"})
 @PropertySource(value = "classpath:default.properties")
 public class SpringConfig {
+	@PersistenceContext
+	private EntityManager entityManager;
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
 		PropertySourcesPlaceholderConfigurer pspc = new PropertySourcesPlaceholderConfigurer();
 		pspc.setPlaceholderPrefix("#{");
 		return pspc;
+	}
+
+	@Bean
+	public JPAQueryFactory jpaQueryFactory() {
+		return new JPAQueryFactory(entityManager);
 	}
 }

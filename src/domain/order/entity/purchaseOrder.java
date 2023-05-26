@@ -16,7 +16,7 @@ import domain.common.entity.ChangeHistory;
 import domain.customer.entity.Customer;
 
 @Entity
-@Table(name = "sale_order")
+@Table(name = "purchase_order")
 public class SaleOrder {
     @Id
     @GeneratedValue

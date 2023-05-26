@@ -9,15 +9,15 @@
         <class>domain.customer.entity.Customer</class>
         <class>domain.common.entity.ChangeHistory</class>
         <class>domain.order.item.entity.Item</class>
-        <class>domain.order.entity.SaleOrder</class>
+        <class>domain.order.entity.PurchaseOrder</class>
         <class>domain.product.entity.Product</class>
         
         <properties>
             <!-- Configuring DB -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/jpa?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/my_test?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false" />
             <property name="javax.persistence.jdbc.user" value="charles" />
             <property name="javax.persistence.jdbc.password" value="1qazxsw2" />
-            <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
 
             <!-- Configuring hibernate -->
             <property name="hibernate.show_sql" value="true" />
